@@ -2,13 +2,10 @@
 import { Tel } from "./Tel";
 import { useState } from "react";
 
-export const PersonInfo = (props) => {
-  // let stateArray = useState(false);
-  // let isExpanded = stateArray[0];
-  // let setIsExpanded = stateArray[1];
-  const [isExpanded, setIsExpanded] = useState(false);
+import "./PersonInfo.css";
 
-  // const [isFormShown, setIsFormShown] = useState(false);
+export const PersonInfo = (props) => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const buttonEl = (
     <button
@@ -20,13 +17,8 @@ export const PersonInfo = (props) => {
     </button>
   );
 
-  // const handleEditFormShowClick = (e) => {
-  //   console.log(e.target);
-  //   setIsFormShown(true);
-  // };
-
   return (
-    <>
+    <li className={isExpanded ? "active" : ""}>
       <h2>
         {props.name} {props.surname}
       </h2>
@@ -40,10 +32,6 @@ export const PersonInfo = (props) => {
           {props.city && <h3>Miasto: {props.city}</h3>}
         </>
       )}
-
-      {/* <button onClick={handleEditFormShowClick}>Modyfikuj</button> */}
-
-      <hr />
-    </>
+    </li>
   );
 };

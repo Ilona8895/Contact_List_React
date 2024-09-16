@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Form } from "./components/Form";
 import { PersonInfo } from "./components/PersonInfo";
 
+import "./App.css";
+
 const initialPeople = [
   {
     name: "Ilona",
@@ -43,15 +45,17 @@ function App() {
       ) : (
         <button onClick={handleFormShowCLick}>Dodaj</button>
       )}
-      {people.map((person) => (
-        <PersonInfo
-          key={person.tel}
-          name={person.name}
-          surname={person.surname}
-          tel={person.tel}
-          city={person.city}
-        />
-      ))}
+      <ul>
+        {people.map((person) => (
+          <PersonInfo
+            key={person.tel}
+            name={person.name}
+            surname={person.surname}
+            tel={person.tel}
+            city={person.city}
+          />
+        ))}
+      </ul>
     </>
   );
 }

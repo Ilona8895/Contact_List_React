@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
+import "./Form.css";
+
 export const Form = ({ onAddPerson }) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
