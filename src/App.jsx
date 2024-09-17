@@ -27,15 +27,16 @@ const initialPeople = [
 
 function App() {
   const [isFormShown, setIsFormShown] = useState(false);
-  const handleFormShowCLick = () => setIsFormShown(true);
   const [people, setPeople] = useState(initialPeople);
 
-  const addPerson = (data) => {
+  const handleFormShowCLick = () => setIsFormShown(true);
+
+  function addPerson(data) {
     console.log(data);
     const newPeople = [...people, data];
     setPeople(newPeople);
     setIsFormShown(false);
-  };
+  }
 
   return (
     <>

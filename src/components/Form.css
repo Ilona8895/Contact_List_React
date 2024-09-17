@@ -3,3 +3,8 @@ input {
   padding: 12px;
   width: 100%;
 }
+
+form button {
+  background-color: rgb(114, 119, 143);
+  margin-bottom: 20px;
+}

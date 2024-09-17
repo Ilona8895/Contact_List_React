@@ -1,11 +1,13 @@
-/* eslint-disable react/prop-types */
 import { Tel } from "./Tel";
 import { useState } from "react";
+import { Form } from "./Form";
 
 import "./PersonInfo.css";
 
 export const PersonInfo = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isModify, setModify] = useState(false);
+  const [values, setValues] = useState(props);
 
   const buttonEl = (
     <button
@@ -17,21 +19,42 @@ export const PersonInfo = (props) => {
     </button>
   );
 
-  return (
-    <li className={isExpanded ? "active" : ""}>
-      <h2>
-        {props.name} {props.surname}
-      </h2>
-      {buttonEl}
+  const handleDeletePerson = (e) => {
+    e.target.closest("li").remove();
+  };
 
-      {isExpanded && (
-        <>
-          <h3>
-            Tel: <Tel tel={props.tel} />
-          </h3>
-          {props.city && <h3>Miasto: {props.city}</h3>}
-        </>
-      )}
-    </li>
+  function modPerson(data) {
+    // console.log(props);
+    // console.log(data);
+    setValues(data);
+    setModify(false);
+    // return data;
+  }
+
+  const handleModifyPerson = () => {
+    setModify(true);
+  };
+
+  return (
+    <>
+      <li className={isExpanded ? "active" : ""}>
+        <h2>
+          {values.name} {values.surname}
+        </h2>
+        {buttonEl}
+
+        {isExpanded && (
+          <>
+            <h3>
+              Tel: <Tel tel={values.tel} />
+            </h3>
+            {values.city && <h3>Miasto: {values.city}</h3>}
+          </>
+        )}
+        <button onClick={handleModifyPerson}>Modyfikuj</button>
+        <button onClick={handleDeletePerson}>Usuń</button>
+      </li>
+      {isModify && <Form modPersonForm={values} onModPerson={modPerson} />}
+    </>
   );
 };
