@@ -6,22 +6,22 @@ import "./App.css";
 
 const initialPeople = [
   {
-    name: "Ilona",
-    surname: "Melcher",
-    city: "Gliwice",
-    tel: 123456789,
-  },
-  {
-    name: "Dawid",
-    surname: "Melcher",
+    name: "Anna",
+    surname: "Kowalska",
     city: "Kraków",
-    tel: 736491284,
+    tel: 123999555,
   },
   {
-    name: "Przemysław",
-    surname: "Czarnek",
+    name: "Piotr",
+    surname: "Nowak",
+    city: "Warszawa",
+    tel: 234847634,
+  },
+  {
+    name: "Justyna",
+    surname: "Nowacka",
     // city: "Zakpane",
-    tel: 307008802,
+    tel: 894755221,
   },
 ];
 
