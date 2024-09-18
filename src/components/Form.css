@@ -6,5 +6,10 @@ input {
 
 form button {
   background-color: rgb(114, 119, 143);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+}
+
+li > form {
+  width: 80%;
+  margin: 20px auto;
 }

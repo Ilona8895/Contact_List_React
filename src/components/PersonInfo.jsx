@@ -36,7 +36,7 @@ export const PersonInfo = (props) => {
 
   return (
     <>
-      <li className={isExpanded ? "active" : ""}>
+      <li className={isExpanded || isModify ? "active" : ""}>
         <h2>
           {values.name} {values.surname}
         </h2>
@@ -52,8 +52,8 @@ export const PersonInfo = (props) => {
         )}
         <button onClick={handleModifyPerson}>Modyfikuj</button>
         <button onClick={handleDeletePerson}>Usuń</button>
+        {isModify && <Form modPersonForm={values} onModPerson={modPerson} />}
       </li>
-      {isModify && <Form modPersonForm={values} onModPerson={modPerson} />}
     </>
   );
 };
