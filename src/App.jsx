@@ -20,7 +20,6 @@ const initialPeople = [
   {
     name: "Justyna",
     surname: "Nowacka",
-    // city: "Zakpane",
     tel: 894755221,
   },
 ];

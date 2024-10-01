@@ -24,8 +24,6 @@ export const PersonInfo = (props) => {
   };
 
   function modPerson(data) {
-    // console.log(props);
-    // console.log(data);
     setValues(data);
     setModify(false);
   }

@@ -10,13 +10,12 @@ export const Form = ({ onAddPerson, modPersonForm, onModPerson }) => {
   );
   const [tel, setTel] = useState(modPersonForm ? modPersonForm.tel : "");
   const [city, setCity] = useState(modPersonForm ? modPersonForm.city : "");
-  // console.log(modPersonForm);
+
   return (
     <form
       action=""
       onSubmit={(e) => {
         e.preventDefault();
-        // console.log({ name, surname, tel, city });
 
         if (modPersonForm) onModPerson({ name, surname, tel, city });
         if (onAddPerson) onAddPerson({ name, surname, tel, city });
